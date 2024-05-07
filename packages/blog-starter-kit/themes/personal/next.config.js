@@ -74,20 +74,16 @@ const config = {
 	},
 	async rewrites() {
 		return [
-			{
-				source: '/ping/data-event',
-				destination: `${ANALYTICS_BASE_URL}/api/data-event`,
-			},
-			{
-				source: '/ping/view',
-				destination: `${ANALYTICS_BASE_URL}/api/view`,
-			},
-			{
-				source: '/api/analytics',
-				destination: `${HASHNODE_ADVANCED_ANALYTICS_URL}/api/analytics`,
-			},
+		  {
+			source: "/blog",
+			destination: "https://starter-kit-rose-seven.vercel.app/blog", 
+		  },
+		  {
+			source: "/blog/:path*",
+			destination: "https://starter-kit-rose-seven.vercel.app/blog/:path*",
+		  },
 		];
-	},
+	  },
 	async redirects() {
 		return await getRedirectionRules();
 	},
